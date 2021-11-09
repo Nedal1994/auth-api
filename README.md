@@ -22,6 +22,6 @@ Nedal Al Saleh
 
 [heruko]()
 
-[github]()
+[github](https://github.com/Nedal1994/auth-api/tree/dev)
 
-[pull request]()
+[pull request](https://github.com/Nedal1994/auth-api/pull/1)
