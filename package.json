@@ -1,9 +1,10 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
+  "description": "## Author",
   "main": "server.js",
   "scripts": {
+    "dev": "NODE_ENV=development nodemon index.js",
     "start": "NODE_ENV=production node index.js",
     "watch": "nodemon index.js",
     "init:config": "sequelize init:config",
@@ -30,5 +31,14 @@
     "sequelize": "^6.9.0",
     "sequelize-cli": "^6.3.0",
     "sqlite3": "^5.0.2"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nedal1994/auth-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Nedal1994/auth-api/issues"
+  },
+  "homepage": "https://github.com/Nedal1994/auth-api#readme"
 }
