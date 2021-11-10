@@ -32,7 +32,9 @@
     "sequelize-cli": "^6.3.0",
     "sqlite3": "^5.0.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Nedal1994/auth-api.git"
