@@ -3,9 +3,9 @@
 const express = require('express');
 const authRouter = express.Router();
 
-const { users } = require('../models/index');
+const { users } = require('../models');
 const basicAuth = require('../middleware/basic.js')
-const bearerAuth = require('../middleware/bearer')
+const bearerAuth = require('../middleware/bearer.js')
 const permissions = require('../middleware/acl.js')
 
 authRouter.post('/signup', async (req, res, next) => {
@@ -30,7 +30,6 @@ authRouter.post('/signin', basicAuth, (req, res, next) => {
 });
 
 authRouter.get('/users', bearerAuth, permissions('delete'), async (req, res, next) => {
-  console.log('it should work')
   const userRecords = await users.findAll({});
   const list = userRecords.map(user => user.username);
   res.status(200).json(list);

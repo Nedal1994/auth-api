@@ -3,7 +3,7 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
-const SECRET = process.env.SECRET || 'pizza';
+const SECRET = process.env.SECRET || 'secretstring';
 
 const userModel = (sequelize, DataTypes) => {
   const model = sequelize.define('Users', {
@@ -49,7 +49,8 @@ const userModel = (sequelize, DataTypes) => {
   model.authenticateToken = async function (token) {
     try {
       const parsedToken = jwt.verify(token, SECRET);
-      const user = this.findOne({where: { username: parsedToken.username } });
+      const user = await this.findOne({where: { username: parsedToken.username } });
+      console.log(user);
       if (user) { return user; }
       throw new Error("User Not Found");
     } catch (e) {
